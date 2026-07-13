@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="assets/img/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
@@ -26,89 +26,117 @@
     </nav>
   </header>
 
+  <section class="page-banner">
+    <div class="page-banner__inner">
+      <h1 class="page-banner__title">Research</h1>
+    </div>
+  </section>
+
   <main class="container">
-    <h1 class="page-title">Research</h1>
+    <div class="filter-bar" id="filterBar">
+      <span class="filter-bar__label">Filter by topic</span>
+    </div>
 
     <section class="section">
-      <p class="subhead">Publications</p>
+      <div class="paper-group">
+        <p class="subhead">Publications</p>
 
-      <div class="paper">
-        <p class="paper__title">
-          <a href="https://www.tandfonline.com/doi/abs/10.1080/08911762.2025.2487710" target="_blank" rel="noopener">Global Diffusion of New Product Innovations: Investigating Cross-Cultural, Lead-Lag Timing, and Internet Effects</a>
-        </p>
-        <p class="paper__venue">Journal of Global Marketing (2025)</p>
-        <p class="paper__authors">(with Dipak Jain)</p>
-        <p class="paper__topics"><span>Peer Effects</span></p>
+        <div class="paper" data-topics="Peer Effects">
+          <p class="paper__title">
+            <a href="https://www.tandfonline.com/doi/abs/10.1080/08911762.2025.2487710" target="_blank" rel="noopener">Global Diffusion of New Product Innovations: Investigating Cross-Cultural, Lead-Lag Timing, and Internet Effects</a>
+          </p>
+          <p class="paper__venue">Journal of Global Marketing (2025)</p>
+          <p class="paper__authors">(with Dipak Jain)</p>
+          <p class="paper__topics"><span class="topic-pill" data-topic="Peer Effects">Peer Effects</span></p>
+        </div>
+
+        <div class="paper" data-topics="CEO Compensation">
+          <p class="paper__title">
+            <a href="https://pubsonline.informs.org/doi/abs/10.1287/mnsc.2024.04322" target="_blank" rel="noopener">Long-Term Pay for Performance: Cumulative Evidence over CEO Tenure</a>
+          </p>
+          <p class="paper__venue">Management Science (2025)</p>
+          <p class="paper__authors">(with Shivaram Rajgopal, Alfred Rappaport, and MJ Song)</p>
+          <p class="paper__topics"><span class="topic-pill" data-topic="CEO Compensation">CEO Compensation</span></p>
+        </div>
       </div>
 
-      <div class="paper">
-        <p class="paper__title">
-          <a href="https://pubsonline.informs.org/doi/abs/10.1287/mnsc.2024.04322" target="_blank" rel="noopener">Long-Term Pay for Performance: Cumulative Evidence over CEO Tenure</a>
-        </p>
-        <p class="paper__venue">Management Science (2025)</p>
-        <p class="paper__authors">(with Shivaram Rajgopal, Alfred Rappaport, and MJ Song)</p>
-        <p class="paper__topics"><span>CEO Compensation</span></p>
+      <div class="paper-group">
+        <p class="subhead">Book Chapter</p>
+
+        <div class="paper" data-topics="FSA">
+          <p class="paper__title">
+            <a href="https://doi.org/10.4337/9781800888685.00014" target="_blank" rel="noopener">Managers&rsquo; Tools to Meet Earnings Management Incentives</a>
+          </p>
+          <p class="paper__venue">Handbook on the Financial Reporting Environment (2025)</p>
+          <p class="paper__authors">(with Doron Nissim)</p>
+          <p class="paper__topics"><span class="topic-pill" data-topic="FSA">FSA</span></p>
+        </div>
       </div>
 
-      <p class="subhead">Book Chapter</p>
+      <div class="paper-group">
+        <p class="subhead">Working Papers</p>
 
-      <div class="paper">
-        <p class="paper__title">Managers&rsquo; Tools to Meet Earnings Management Incentives</p>
-        <p class="paper__venue">Handbook on the Financial Reporting Environment (2025)</p>
-        <p class="paper__authors">(with Doron Nissim)</p>
-        <p class="paper__topics"><span>FSA</span></p>
+        <div class="paper" data-topics="FSA|Valuation">
+          <p class="paper__title">
+            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5050805" target="_blank" rel="noopener">Decision Usefulness of Disaggregated Labor Costs: Ex-Ante Evidence and Implications for the FASB&rsquo;s Expense Disclosure Mandate</a>
+          </p>
+          <p class="paper__authors">(with Yue Chen, Nan Li, and Shivaram Rajgopal)</p>
+          <p class="paper__topics"><span class="topic-pill" data-topic="FSA">FSA</span><span class="topic-pill" data-topic="Valuation">Valuation</span></p>
+        </div>
+
+        <div class="paper" data-topics="FSA|Valuation">
+          <p class="paper__title">Buried Technology Spending: Firm Performance and Capital Market Effects</p>
+          <p class="paper__authors">(with Botir Kobilov and Shinwoo Lee)</p>
+          <p class="paper__topics"><span class="topic-pill" data-topic="FSA">FSA</span><span class="topic-pill" data-topic="Valuation">Valuation</span></p>
+        </div>
+
+        <div class="paper" data-topics="Asset Management|Information Intermediaries|Peer Effects">
+          <p class="paper__title">
+            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5163811" target="_blank" rel="noopener">Industry Classification Providers as Information Intermediaries</a>
+          </p>
+          <p class="paper__authors">(solo-authored) [Based on dissertation]</p>
+          <p class="paper__topics"><span class="topic-pill" data-topic="Asset Management">Asset Management</span><span class="topic-pill" data-topic="Information Intermediaries">Information Intermediaries</span><span class="topic-pill" data-topic="Peer Effects">Peer Effects</span></p>
+        </div>
+
+        <div class="paper" data-topics="Asset Management|Valuation">
+          <p class="paper__title">
+            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5464715" target="_blank" rel="noopener">Exploiting Myopia: The Returns to Long-Term Investing</a>
+          </p>
+          <p class="paper__authors">(with Dian Jiao)</p>
+          <p class="paper__topics"><span class="topic-pill" data-topic="Asset Management">Asset Management</span><span class="topic-pill" data-topic="Valuation">Valuation</span></p>
+        </div>
+
+        <div class="paper" data-topics="Asset Management|Information Intermediaries">
+          <p class="paper__title">
+            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5259351" target="_blank" rel="noopener">Regulating in Name Only: The Consequences of Mutual Fund Naming Rules</a>
+          </p>
+          <p class="paper__authors">(with Dian Jiao and Shivaram Rajgopal)</p>
+          <p class="paper__topics"><span class="topic-pill" data-topic="Asset Management">Asset Management</span><span class="topic-pill" data-topic="Information Intermediaries">Information Intermediaries</span></p>
+        </div>
+
+        <div class="paper" data-topics="CEO Compensation|Peer Effects">
+          <p class="paper__title">
+            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4407139" target="_blank" rel="noopener">Competitive Pay Policies in CEO Compensation</a>
+          </p>
+          <p class="paper__authors">(with Mascia Ferrari, Stephen O&rsquo;Byrne, Francesco Reggiani, and Shivaram Rajgopal)</p>
+          <p class="paper__topics"><span class="topic-pill" data-topic="CEO Compensation">CEO Compensation</span><span class="topic-pill" data-topic="Peer Effects">Peer Effects</span></p>
+        </div>
+
+        <div class="paper" data-topics="Peer Effects|Information Intermediaries">
+          <p class="paper__title">Product Market Networks and the Take-up of Government Programs</p>
+          <p class="paper__authors">(with Carmine Pizzo)</p>
+          <p class="paper__topics"><span class="topic-pill" data-topic="Peer Effects">Peer Effects</span><span class="topic-pill" data-topic="Information Intermediaries">Information Intermediaries</span></p>
+        </div>
       </div>
 
-      <p class="subhead">Working Papers</p>
+      <div class="paper-group">
+        <p class="subhead">Selected Works in Progress</p>
 
-      <div class="paper">
-        <p class="paper__title">Decision Usefulness of Disaggregated Labor Costs: Ex-Ante Evidence and Implications for the FASB&rsquo;s Expense Disclosure Mandate</p>
-        <p class="paper__authors">(with Yue Chen, Nan Li, and Shivaram Rajgopal)</p>
-        <p class="paper__topics"><span>FSA</span><span>Valuation</span></p>
-      </div>
-
-      <div class="paper">
-        <p class="paper__title">Buried Technology Spending: Firm Performance and Capital Market Effects</p>
-        <p class="paper__authors">(with Botir Kobilov and Shinwoo Lee)</p>
-        <p class="paper__topics"><span>FSA</span><span>Valuation</span></p>
-      </div>
-
-      <div class="paper">
-        <p class="paper__title">Industry Classification Providers as Information Intermediaries</p>
-        <p class="paper__authors">(solo-authored) [Based on dissertation]</p>
-        <p class="paper__topics"><span>Asset Management</span><span>Information Intermediaries</span><span>Peer Effects</span></p>
-      </div>
-
-      <div class="paper">
-        <p class="paper__title">Exploiting Myopia: The Returns to Long-Term Investing</p>
-        <p class="paper__authors">(with Dian Jiao)</p>
-        <p class="paper__topics"><span>Asset Management</span><span>Valuation</span></p>
-      </div>
-
-      <div class="paper">
-        <p class="paper__title">Regulating in Name Only: The Consequences of Mutual Fund Naming Rules</p>
-        <p class="paper__authors">(with Dian Jiao and Shivaram Rajgopal)</p>
-        <p class="paper__topics"><span>Asset Management</span><span>Information Intermediaries</span></p>
-      </div>
-
-      <div class="paper">
-        <p class="paper__title">Competitive Pay Policies in CEO Compensation</p>
-        <p class="paper__authors">(with Mascia Ferrari, Stephen O&rsquo;Byrne, Francesco Reggiani, and Shivaram Rajgopal)</p>
-        <p class="paper__topics"><span>CEO Compensation</span><span>Peer Effects</span></p>
-      </div>
-
-      <div class="paper">
-        <p class="paper__title">Product Market Networks and the Take-up of Government Programs</p>
-        <p class="paper__authors">(with Carmine Pizzo)</p>
-        <p class="paper__topics"><span>Peer Effects</span><span>Information Intermediaries</span></p>
-      </div>
-
-      <p class="subhead">Selected Works in Progress</p>
-
-      <div class="paper">
-        <p class="paper__title">Impact of Profitability Shocks on the Value Premium</p>
-        <p class="paper__authors">(with Doron Nissim and MJ Song)</p>
-        <p class="paper__topics"><span>FSA</span><span>Valuation</span></p>
+        <div class="paper" data-topics="FSA|Valuation">
+          <p class="paper__title">Impact of Profitability Shocks on the Value Premium</p>
+          <p class="paper__authors">(with Doron Nissim and MJ Song)</p>
+          <p class="paper__topics"><span class="topic-pill" data-topic="FSA">FSA</span><span class="topic-pill" data-topic="Valuation">Valuation</span></p>
+        </div>
       </div>
     </section>
   </main>
@@ -119,5 +147,57 @@
       <p><a href="mailto:kj2625@gsb.columbia.edu">kj2625@gsb.columbia.edu</a></p>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var papers = Array.prototype.slice.call(document.querySelectorAll('.paper'));
+      var groups = Array.prototype.slice.call(document.querySelectorAll('.paper-group'));
+      var bar = document.getElementById('filterBar');
+      if (!bar) return;
+
+      var topicSet = {};
+      papers.forEach(function (p) {
+        (p.dataset.topics || '').split('|').forEach(function (t) { if (t) topicSet[t] = true; });
+      });
+      var topics = Object.keys(topicSet).sort();
+
+      function apply(topic) {
+        papers.forEach(function (p) {
+          var has = topic === 'All' || (p.dataset.topics || '').split('|').indexOf(topic) > -1;
+          p.classList.toggle('is-hidden', !has);
+        });
+        groups.forEach(function (g) {
+          var anyVisible = Array.prototype.slice.call(g.querySelectorAll('.paper'))
+            .some(function (p) { return !p.classList.contains('is-hidden'); });
+          g.classList.toggle('is-hidden', !anyVisible);
+        });
+        Array.prototype.slice.call(document.querySelectorAll('.filter-pill')).forEach(function (b) {
+          b.classList.toggle('active', b.dataset.topic === topic);
+        });
+      }
+
+      function makePill(label, topic, extra) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'topic-pill filter-pill' + (extra ? ' ' + extra : '');
+        b.textContent = label;
+        b.dataset.topic = topic;
+        b.addEventListener('click', function () { apply(topic); });
+        return b;
+      }
+
+      bar.appendChild(makePill('All', 'All', 'reset'));
+      topics.forEach(function (t) { bar.appendChild(makePill(t, t)); });
+
+      Array.prototype.slice.call(document.querySelectorAll('.paper .topic-pill')).forEach(function (pill) {
+        pill.addEventListener('click', function () {
+          apply(pill.dataset.topic);
+          bar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+
+      apply('All');
+    })();
+  </script>
 </body>
 </html>
