@@ -176,6 +176,11 @@
         (p.dataset.topics || '').split('|').forEach(function (t) { if (t) topicSet[t] = true; });
       });
       var topics = Object.keys(topicSet).sort();
+      var _vi = topics.indexOf('Valuation');
+      if (_vi > -1 && topics.indexOf('FSA') > -1) {
+        topics.splice(_vi, 1);
+        topics.splice(topics.indexOf('FSA') + 1, 0, 'Valuation');
+      }
 
       function render(animate) {
         var keys = Object.keys(selected);
