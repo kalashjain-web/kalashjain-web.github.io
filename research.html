@@ -35,6 +35,8 @@
   <main class="container">
     <div class="filter-bar" id="filterBar">
       <span class="filter-bar__label">Filter by topic</span>
+      <div class="filter-pills" id="filterPills"></div>
+      <button type="button" class="filter-clear" id="filterClear">Clear filters</button>
     </div>
 
     <section class="section">
@@ -153,7 +155,12 @@
       var papers = Array.prototype.slice.call(document.querySelectorAll('.paper'));
       var groups = Array.prototype.slice.call(document.querySelectorAll('.paper-group'));
       var bar = document.getElementById('filterBar');
-      if (!bar) return;
+      var pillsWrap = document.getElementById('filterPills');
+      var clearBtn = document.getElementById('filterClear');
+      var section = document.querySelector('main .section');
+      if (!bar || !pillsWrap) return;
+
+      var selected = {};
 
       var topicSet = {};
       papers.forEach(function (p) {
@@ -161,19 +168,49 @@
       });
       var topics = Object.keys(topicSet).sort();
 
-      function apply(topic) {
+      function render(animate) {
+        var keys = Object.keys(selected);
+        var showAll = keys.length === 0;
+
         papers.forEach(function (p) {
-          var has = topic === 'All' || (p.dataset.topics || '').split('|').indexOf(topic) > -1;
-          p.classList.toggle('is-hidden', !has);
+          var pts = (p.dataset.topics || '').split('|');
+          var show = showAll || keys.some(function (k) { return pts.indexOf(k) > -1; });
+          p.classList.toggle('is-hidden', !show);
         });
+
+        var firstVisibleAssigned = false;
         groups.forEach(function (g) {
           var anyVisible = Array.prototype.slice.call(g.querySelectorAll('.paper'))
             .some(function (p) { return !p.classList.contains('is-hidden'); });
           g.classList.toggle('is-hidden', !anyVisible);
+          g.classList.remove('is-first-visible');
+          if (anyVisible && !firstVisibleAssigned) {
+            g.classList.add('is-first-visible');
+            firstVisibleAssigned = true;
+          }
         });
-        Array.prototype.slice.call(document.querySelectorAll('.filter-pill')).forEach(function (b) {
-          b.classList.toggle('active', b.dataset.topic === topic);
+
+        Array.prototype.slice.call(pillsWrap.querySelectorAll('.filter-pill')).forEach(function (b) {
+          var t = b.dataset.topic;
+          b.classList.toggle('active', t === 'All' ? showAll : !!selected[t]);
         });
+
+        if (animate && section) {
+          section.style.opacity = '0';
+          void section.offsetWidth;
+          section.style.opacity = '1';
+        }
+      }
+
+      function toggleTopic(topic) {
+        if (topic === 'All') {
+          selected = {};
+        } else if (selected[topic]) {
+          delete selected[topic];
+        } else {
+          selected[topic] = true;
+        }
+        render(true);
       }
 
       function makePill(label, topic, extra) {
@@ -182,21 +219,25 @@
         b.className = 'topic-pill filter-pill' + (extra ? ' ' + extra : '');
         b.textContent = label;
         b.dataset.topic = topic;
-        b.addEventListener('click', function () { apply(topic); });
+        b.addEventListener('click', function () { toggleTopic(topic); });
         return b;
       }
 
-      bar.appendChild(makePill('All', 'All', 'reset'));
-      topics.forEach(function (t) { bar.appendChild(makePill(t, t)); });
+      pillsWrap.appendChild(makePill('All', 'All', 'reset'));
+      topics.forEach(function (t) { pillsWrap.appendChild(makePill(t, t)); });
+
+      if (clearBtn) {
+        clearBtn.addEventListener('click', function () { selected = {}; render(true); });
+      }
 
       Array.prototype.slice.call(document.querySelectorAll('.paper .topic-pill')).forEach(function (pill) {
         pill.addEventListener('click', function () {
-          apply(pill.dataset.topic);
+          toggleTopic(pill.dataset.topic);
           bar.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
       });
 
-      apply('All');
+      render(false);
     })();
   </script>
 </body>

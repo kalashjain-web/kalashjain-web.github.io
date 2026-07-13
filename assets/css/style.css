@@ -169,7 +169,7 @@ body::before {
 .hero h2 { color: var(--navy); }
 
 /* ===== Sections ===== */
-.section { padding: 8px 0 40px; }
+.section { padding: 8px 0 40px; transition: opacity 0.5s ease; }
 .section h2 { font-size: 1.9rem; margin: 36px 0 8px; }
 .page-title {
   font-size: 2.5rem;
@@ -191,6 +191,7 @@ body::before {
 }
 .paper-group { margin: 0 0 36px; }
 .paper-group:first-of-type { margin-top: 8px; }
+.paper-group.is-first-visible { margin-top: 8px; }
 
 /* ===== Research list ===== */
 .paper {
@@ -199,7 +200,7 @@ body::before {
   padding: 4px 0 18px 20px;
   margin: 0 0 18px;
 }
-.paper:last-child { border-bottom: none; margin-bottom: 0; }
+.paper:last-child { margin-bottom: 0; }
 .paper__title {
   font-family: var(--font-sans);
   font-size: 1.22rem;
@@ -217,34 +218,51 @@ body::before {
 /* ===== Topic tags (clickable filters) ===== */
 .filter-bar {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
   margin: 4px 0 30px;
   padding: 14px 0 18px;
   border-bottom: 1px solid var(--line);
 }
 .filter-bar__label {
-  font-size: 0.82rem;
+  font-size: 1.15rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--muted);
-  margin-right: 4px;
 }
+.filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.filter-clear {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #55606a;
+}
+.filter-clear:hover { color: var(--ink); text-decoration: underline; }
 .topic-pill {
   display: inline-block;
   cursor: pointer;
   border: 1px solid #cfe6f2;
   background: #edf6fb;
-  color: var(--cbs-blue-dark);
+  color: #004c6c;
   border-radius: 999px;
-  padding: 3px 13px;
-  font-size: 0.8rem;
+  padding: 3px 10px;
+  font-size: 0.95rem;
   font-weight: 600;
   line-height: 1.5;
   user-select: none;
-  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  transition: background 0.5s ease, color 0.5s ease, border-color 0.5s ease;
 }
 .topic-pill:hover {
   background: var(--cbs-blue);
