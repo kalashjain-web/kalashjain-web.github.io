@@ -1,0 +1,212 @@
+/* ===== Kalash Jain — academic site ===== */
+:root {
+  --cbs-blue: #009bdb;
+  --cbs-blue-dark: #0077a8;
+  --ink: #333;
+  --muted: #666;
+  --line: #e6e6e6;
+  --maxw: 1000px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+a { color: var(--cbs-blue-dark); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1, h2, h3 {
+  font-family: "Vollkorn", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--cbs-blue);
+}
+
+/* ===== Header / nav ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: saturate(180%) blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+.nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Vollkorn", Georgia, serif;
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+.nav__brand img { height: 40px; width: auto; display: block; }
+.nav__links {
+  display: flex;
+  gap: 26px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav__links a {
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+.nav__links a:hover,
+.nav__links a.active { color: var(--cbs-blue); text-decoration: none; }
+
+/* ===== Hero (home) ===== */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 48px;
+  align-items: start;
+  padding: 56px 0 24px;
+}
+.hero__name { font-size: 3rem; margin: 0 0 6px; }
+.hero__title { font-size: 1.15rem; color: var(--muted); margin: 0; }
+.hero__photo {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  display: block;
+}
+
+/* ===== Sections ===== */
+.section { padding: 8px 0 40px; }
+.section h2 {
+  font-size: 2rem;
+  margin: 40px 0 8px;
+}
+.page-title {
+  font-size: 2.6rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 48px 0 8px;
+}
+.subhead {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  color: var(--muted);
+  border-bottom: 2px solid var(--cbs-blue);
+  display: inline-block;
+  padding-bottom: 4px;
+  margin: 40px 0 20px;
+}
+
+/* ===== Research list ===== */
+.paper { margin: 0 0 28px; }
+.paper__title {
+  font-family: "Vollkorn", Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 4px;
+}
+.paper__title a { color: var(--ink); }
+.paper__title a:hover { color: var(--cbs-blue); text-decoration: none; }
+.paper__venue { font-style: italic; color: var(--muted); margin: 0; }
+.paper__authors { margin: 2px 0; }
+.paper__topics { font-size: 0.85rem; color: var(--muted); margin: 2px 0 0; }
+.paper__topics span {
+  display: inline-block;
+  background: #f1f7fb;
+  color: var(--cbs-blue-dark);
+  border-radius: 4px;
+  padding: 1px 8px;
+  margin-right: 6px;
+  font-size: 0.78rem;
+}
+
+/* ===== Teaching ===== */
+.ratings {
+  border-collapse: collapse;
+  margin: 12px 0 24px;
+  min-width: 320px;
+}
+.ratings th, .ratings td {
+  text-align: left;
+  padding: 8px 24px 8px 0;
+  border-bottom: 1px solid var(--line);
+}
+.ratings th { color: var(--cbs-blue-dark); font-weight: 600; }
+.award { color: var(--cbs-blue-dark); font-weight: 600; }
+blockquote.quote {
+  margin: 0 0 20px;
+  padding: 4px 0 4px 20px;
+  border-left: 3px solid var(--cbs-blue);
+  color: #444;
+  font-style: italic;
+}
+
+/* ===== Social icons (real logos, boxed like the live site) ===== */
+.socials { display: flex; gap: 16px; align-items: center; margin: 24px 0 0; }
+.socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.15s ease;
+}
+.socials a:hover { opacity: 0.7; }
+.socials img { height: 44px; width: 44px; object-fit: contain; display: block; }
+
+/* ===== Footer ===== */
+.site-footer {
+  border-top: 1px solid var(--line);
+  margin-top: 40px;
+  padding: 32px 0 48px;
+  text-align: center;
+}
+.site-footer .name {
+  font-family: "Vollkorn", Georgia, serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 4px;
+}
+.site-footer a { color: var(--cbs-blue-dark); }
+.site-footer .socials { justify-content: center; }
+
+/* ===== Responsive ===== */
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-top: 32px;
+  }
+  .hero__photo { max-width: 260px; margin: 0 auto; }
+  .hero__name { font-size: 2.4rem; }
+  .nav { padding: 12px 18px; flex-wrap: wrap; gap: 10px; }
+  .nav__links { gap: 16px; }
+  .page-title { font-size: 2rem; }
+  body { font-size: 16px; }
+}
