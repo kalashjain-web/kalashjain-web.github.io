@@ -235,14 +235,13 @@ body::before {
 .topic-pill {
   display: inline-block;
   cursor: pointer;
-  border: 1px solid var(--line);
-  background: transparent;
+  border: 1px solid #cfe6f2;
+  background: #edf6fb;
   color: var(--cbs-blue-dark);
-  padding: 3px 11px;
-  font-size: 0.78rem;
+  border-radius: 999px;
+  padding: 3px 13px;
+  font-size: 0.8rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
   line-height: 1.5;
   user-select: none;
   transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
