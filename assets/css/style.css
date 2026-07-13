@@ -65,7 +65,7 @@ body::before {
 .nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 12px 24px;
   max-width: var(--maxw);
   margin: 0 auto;
